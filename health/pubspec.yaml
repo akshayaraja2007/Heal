@@ -1,0 +1,27 @@
+name: health
+description: Offline personal health tracker
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  provider: ^6.1.1
+  shared_preferences: ^2.2.2
+  flutter_local_notifications: ^17.0.0
+  percent_indicator: ^4.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
