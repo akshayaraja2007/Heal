@@ -1,0 +1,29 @@
+name: Flutter Build APK
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: health
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - run: flutter pub get
+
+      - run: flutter build apk --release --split-per-abi
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: health/build/app/outputs/flutter-apk/
