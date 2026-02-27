@@ -5,22 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.akshayaraja.heal"
+    namespace = "com.example.health"
     compileSdk = 34
-    ndkVersion = flutter.ndkVersion
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-        isCoreLibraryDesugaringEnabled = true
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 
     defaultConfig {
-        applicationId = "com.akshayaraja.heal"
+        applicationId = "com.example.health"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
@@ -34,23 +23,17 @@ android {
             // APK SIZE OPTIMIZATION
             isMinifyEnabled = true
             isShrinkResources = true
-
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
         }
     }
 
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-}
 
-dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 flutter {
