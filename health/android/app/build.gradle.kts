@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.health"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.health"
@@ -19,8 +19,6 @@ android {
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
-
-            // APK SIZE OPTIMIZATION
             isMinifyEnabled = true
             isShrinkResources = true
         }
@@ -29,11 +27,16 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
         jvmTarget = "17"
     }
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
 
 flutter {
