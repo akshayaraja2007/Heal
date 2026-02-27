@@ -13,7 +13,7 @@ jobs:
         working-directory: health
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: subosito/flutter-action@v2
         with:
@@ -23,7 +23,7 @@ jobs:
 
       - run: flutter build apk --release --split-per-abi
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: health/build/app/outputs/flutter-apk/
